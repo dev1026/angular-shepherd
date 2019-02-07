@@ -1,6 +1,6 @@
 # angular-shepherd
 
-This is an Angular wrapper for the [Shepherd](https://github.com/mathwang9016/shepherd), site tour, library. 
+This is an Angular wrapper for the [Shepherd](https://github.com/mathwang9016/angular-shepherd), site tour, library. 
 It provides additional functionality, on top of Shepherd, as well.
 
 ## Installation
