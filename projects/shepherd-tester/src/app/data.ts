@@ -40,7 +40,7 @@ export const steps = [
       text: [
         `
           Ember Shepherd is a JavaScript library for guiding users through your Ember app.
-          It is an Ember addon that wraps <a href="https://github.com/shipshapecode/shepherd">Shepherd</a>
+          It is an Ember addon that wraps <a href="https://github.com/mathwang9016/shepherd">Shepherd</a>
           and extends its functionality. Shepherd uses <a href="https://atomiks.github.io/tippyjs/">Tippy.js</a>,
           another open source library, to position all of its steps and enable entrance and exit animations.
         `,
