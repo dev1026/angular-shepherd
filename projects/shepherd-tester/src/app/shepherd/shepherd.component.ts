@@ -1,5 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { ShepherdService } from '../../../../shepherd/src/lib/shepherd.service';
+import { angularShepherdSVC } from '../../../../shepherd/src/lib/shepherd.service';
 import { steps as defaultSteps, defaultStepOptions} from '../data';
 
 @Component({
@@ -9,14 +9,14 @@ import { steps as defaultSteps, defaultStepOptions} from '../data';
 })
 export class ShepherdComponent implements AfterViewInit {
 
-  constructor(private shepherdService: ShepherdService) { }
+  constructor(private angularShepherdSVC: angularShepherdSVC) { }
 
   ngAfterViewInit() {
-    this.shepherdService.defaultStepOptions = defaultStepOptions;
-    this.shepherdService.disableScroll = true;
-    this.shepherdService.modal = true;
-    this.shepherdService.confirmCancel = false;
-    this.shepherdService.addSteps(defaultSteps);
-    this.shepherdService.start();
+    this.angularShepherdSVC.defaultStepOptions = defaultStepOptions;
+    this.angularShepherdSVC.disableScroll = true;
+    this.angularShepherdSVC.modal = true;
+    this.angularShepherdSVC.confirmCancel = false;
+    this.angularShepherdSVC.addSteps(defaultSteps);
+    this.angularShepherdSVC.start();
   }
 }

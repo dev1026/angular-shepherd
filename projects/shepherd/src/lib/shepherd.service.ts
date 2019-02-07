@@ -8,7 +8,7 @@ import { normalizeAttachTo } from './utils/attachTo';
 @Injectable({
   providedIn: 'root'
 })
-export class ShepherdService implements OnDestroy {
+export class angularShepherdSVC implements OnDestroy {
   confirmCancel = false;
   confirmCancelMessage: string = null;
   defaultStepOptions: object = {};

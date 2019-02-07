@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ShepherdService } from './shepherd.service';
+import { angularShepherdSVC } from './shepherd.service';
 
-describe('ShepherdService', () => {
+describe('angularShepherdSVC', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ShepherdService = TestBed.get(ShepherdService);
+    const service: angularShepherdSVC = TestBed.get(angularShepherdSVC);
     expect(service).toBeTruthy();
   });
 });

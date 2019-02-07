@@ -37,7 +37,7 @@ export class AppComponent {
 }
 ```
 
-Then, you will need to inject the `ShepherdService` to be able to interact with Shepherd and 
+Then, you will need to inject the `angularShepherdSVC` to be able to interact with Shepherd and 
 call `addSteps` to add your steps, `start` to start the tour, etc.
 
 You could either do this at the application level, in your application component
@@ -47,7 +47,7 @@ In that component you will want to use `AfterViewInit` to `addSteps` to the Shep
 
 ```typescript
 import { Component, AfterViewInit } from '@angular/core';
-import { ShepherdService } from 'angular-shepherd';
+import { angularShepherdSVC } from 'angular-shepherd';
 import { steps as defaultSteps, defaultStepOptions} from '../data';
 
 @Component({
@@ -57,22 +57,22 @@ import { steps as defaultSteps, defaultStepOptions} from '../data';
 })
 export class ShepherdComponent implements AfterViewInit {
 
-  constructor(private shepherdService: ShepherdService) { }
+  constructor(private angularShepherdSVC: angularShepherdSVC) { }
 
   ngAfterViewInit() {
-    this.shepherdService.defaultStepOptions = defaultStepOptions;
-    this.shepherdService.disableScroll = true;
-    this.shepherdService.modal = true;
-    this.shepherdService.confirmCancel = false;
-    this.shepherdService.addSteps(defaultSteps);
-    this.shepherdService.start();
+    this.angularShepherdSVC.defaultStepOptions = defaultStepOptions;
+    this.angularShepherdSVC.disableScroll = true;
+    this.angularShepherdSVC.modal = true;
+    this.angularShepherdSVC.confirmCancel = false;
+    this.angularShepherdSVC.addSteps(defaultSteps);
+    this.angularShepherdSVC.start();
   }
 }
 ```
 
 ## Configuration
 
-The following configuration options can be set on the ShepherdService to control the way that Shepherd is used. 
+The following configuration options can be set on the angularShepherdSVC to control the way that Shepherd is used. 
 **The only required option is `steps`, which is set via `addSteps`.**
 
 ### confirmCancel
@@ -95,7 +95,7 @@ You can pass in any of the options that you can with Shepherd.
 It will be an object of a form something like:
 
 ```js
-this.shepherdService.defaultStepOptions = {
+this.angularShepherdSVC.defaultStepOptions = {
   classes: 'custom-class-name-1 custom-class-name-2',
   scrollTo: false,
   showCancelLink: true
@@ -116,7 +116,7 @@ You can also specify a message, which will tell the user what they need to do to
 
 _Example_
 ```js
-this.shepherdService.requiredElements = [
+this.angularShepherdSVC.requiredElements = [
   {
     selector: '.search-result-element',
     message: 'No search results found. Please execute another search, and try to start the tour again.',
@@ -152,7 +152,7 @@ greyed out, and the current element highlighted. If you do not need modal functi
 You must pass an array of steps to `addSteps`, something like this:
 
 ```js
-this.shepherdService.addSteps([
+this.angularShepherdSVC.addSteps([
   {
     id: 'intro',
     options: {
